@@ -1,7 +1,6 @@
 import {
     GET_UKM,
     GET_UKM_PROFILE,
-    POST_PENDAFTAR_UKM
 } from "Constants/actionTypes";
 
 
@@ -14,8 +13,7 @@ const INIT_STATE = {
     alumni:[],
     ukm_id:'',
     nama_ukm:'',
-    profile_ukm:'',
-    pen:'',
+    deskripsi_ukm:'',
     is_oprec: ''
     
   };
@@ -38,14 +36,9 @@ const INIT_STATE = {
           ...state, 
           ukm_id: action.payload.id,
           nama_ukm: action.payload.nama_ukm,
-          profile_ukm: action.payload.profile_ukm, 
+          deskripsi_ukm: action.payload.deskripsi_ukm, 
           is_oprec: action.payload.is_oprec
         };
-        case POST_PENDAFTAR_UKM:
-            return { 
-              ...state, 
-              pen: action.payload
-            };
       default:
         return { ...state };
     }

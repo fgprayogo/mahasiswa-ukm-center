@@ -131,8 +131,9 @@ uploadGambar(event){
         
         <Row>
           <Colxx xxs="12">
+            <h1>Profile</h1>
             <BreadcrumbContainer
-              heading={<IntlMessages id="dashboards.profile" />}
+              // heading={<IntlMessages id="dashboards.profile" />}
               match={this.props.match}
             />
             <Separator className="mb-5" />

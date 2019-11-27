@@ -111,7 +111,7 @@ componentDidUpdate(){
           </Colxx>
         </Row>
 
-      <Link to="/app/pages/semua_ukm">  
+      <Link to="/app/ui/anggota">  
         <h1><i className="iconsmind-Left-4" /></h1>
       </Link>
       
@@ -129,10 +129,10 @@ componentDidUpdate(){
                             <CardSubtitle className="mb-1">Deskripsi UKM</CardSubtitle>
                           </NavLink>
                           <CardText className="text-muted text-small mb-4">{this.props.deskripsi_ukm}</CardText>
-                          {this.props.is_oprec ?
+                          {/* {this.props.is_oprec ?
                           <Button outline size="sm" color="primary" onClick={this.toggle}>Begabung!</Button>
                           : <div/>
-                          }
+                          } */}
                           
                         </div>
                       </CardBody>

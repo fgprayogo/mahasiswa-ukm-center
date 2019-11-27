@@ -280,7 +280,7 @@ class PendaftaranDibuka extends Component {
                   <BreadcrumbItems match={this.props.match} />
                 </div>
 
-                <div className="mb-2">
+                {/* <div className="mb-2">
                   <Button
                     color="empty"
                     className="pt-0 pl-0 d-inline-block d-md-none"
@@ -386,14 +386,14 @@ class PendaftaranDibuka extends Component {
                       </UncontrolledDropdown>
                     </div>
                   </Collapse>
-                </div>
+                </div> */}
                 <Separator className="mb-5" />
               </Colxx>
             </Row>
             {/* start here */}
             
             <Row>
-              {
+            {this.props.dibuka == "" ? 'Semua UKM sedang tidak membuka pendaftaran' :
                 this.props.dibuka.map(data => (
                   <Colxx
                       sm="6"
@@ -425,7 +425,7 @@ class PendaftaranDibuka extends Component {
                               <Link to={`${this.props.match.url}/${data.id}`}>
                               <CardImg
                                 top
-                                src={"https://image.freepik.com/free-vector/soccer-stadium-building-with-ticket-office-isometric_1441-3588.jpg"}
+                                src={`http://127.0.0.1:3333/api/ukm/file/${data.gambar}`}
                               />
                               </Link>
                             </NavLink>
@@ -439,23 +439,8 @@ class PendaftaranDibuka extends Component {
                           </div>
                           <CardBody>
                             <Row>
-                              <Colxx xxs="2">
-                                <CustomInput
-                                  className="itemCheck mb-0"
-                                  type="checkbox"
-                                  id={`check_${data.id}`}
-                                  checked={this.state.selectedItems.includes(
-                                    data.id
-                                  )}
-                                  onChange={() => {}}
-                                  label=""
-                                />
-                              </Colxx>
-                              <Colxx xxs="10" className="mb-3">
+                              <Colxx xxs="12">
                                 <CardSubtitle>{data.nama_ukm}</CardSubtitle>
-                                <CardText className="text-muted text-small mb-0 font-weight-light">
-                                  {data.profile_ukm}
-                                </CardText>
                               </Colxx>
                             </Row>
                           </CardBody>

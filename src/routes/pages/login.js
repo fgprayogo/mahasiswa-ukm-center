@@ -83,14 +83,14 @@ componentDidCatch(error){
               <Colxx xxs="12" md="10" className="mx-auto my-auto ">
                 <Card className="auth-card">
                   <div className="position-relative image-side "> {/* iki diotak atik */}
-                    <p className="text-white h2">UKM Center</p>
+                    {/* <p className="text-white h2">UKM Center</p>
                     {
                       this.props.user ? <div>Authorized</div> : <div>Ndi tokene</div>
                     }
                     <p className="white">
                       "Karena aku punya jalan ninjaku"
                       <br />
-                    </p>
+                    </p> */}
                   </div>
                   <div className="form-side">
                     <div align="center">
@@ -125,7 +125,6 @@ componentDidCatch(error){
                         />
                       </Label> 
                       {/* <a><font color="red">{this.props.msg}</font></a> */}
-                     <hr/>
                       <p className="black">
                           <NavLink to={`/register`} className="blue">
                             Don't Have Account? Register

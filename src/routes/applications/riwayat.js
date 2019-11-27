@@ -301,7 +301,8 @@ class Riwayat extends Component {
           </Row>
           
           <Row>
-            {this.props.riwayat.map(data => {
+          {this.props.riwayat == "" ? 'Tidak ada riwayat pendaftaran' :
+            this.props.riwayat.map(data => {
               // disini cek else datalist
                 return (
                   <Colxx xxs="12" key={data.id} className="mb-3">
@@ -327,7 +328,7 @@ class Riwayat extends Component {
                                 {data.nama_ukm}
                               </p>
                             </NavLink>
-                            <p className="mb-1 text-muted text-small w-15 w-sm-100">
+                            {/* <p className="mb-1 text-muted text-small w-15 w-sm-100">
                               kategori
                             </p>
                             <p className="mb-1 text-muted text-small w-15 w-sm-100">
@@ -335,9 +336,9 @@ class Riwayat extends Component {
                             </p>
                             <div className="w-15 w-sm-100">
                               
-                            </div>
+                            </div> */}
                           </div>
-                          <div className="custom-control custom-checkbox pl-1 align-self-center pr-4">
+                          {/* <div className="custom-control custom-checkbox pl-1 align-self-center pr-4">
                             <CustomInput
                               className="itemCheck mb-0"
                               type="checkbox"
@@ -348,7 +349,7 @@ class Riwayat extends Component {
                               onChange={() => {}}
                               label=""
                             />
-                          </div>
+                          </div> */}
                         </div>
                       </Card>
                     </ContextMenuTrigger>
@@ -358,11 +359,11 @@ class Riwayat extends Component {
               }
             )}
            
-            <Pagination
+            {/* <Pagination
               currentPage={this.state.currentPage}
               totalPage={this.state.totalPage}
               onChangePage={i => this.onChangePage(i)}
-            />
+            /> */}
             
           </Row>
         </div>
@@ -390,11 +391,6 @@ class Riwayat extends Component {
             <i className="simple-icon-trash" /> <span>Delete</span>
           </MenuItem>
         </ContextMenu>
-
-        {/* <Select 
-          options={this.props.pendaftaran.map(({id, nama}) => ({value:id, label:nama}))}
-          onChange={this.handleSelect}
-          /> */}
 
 
       </Fragment>

@@ -1,5 +1,7 @@
 import {
-    GET_PENDAFTARAN
+    GET_PENDAFTARAN,
+    POST_PENDAFTAR_UKM,
+    CLEAR_FORM_PENDAFTARAN
 } from "Constants/actionTypes";
 
 
@@ -9,8 +11,9 @@ const INIT_STATE = {
     aktif:[],
     ditolak:[],
     diterima:[],
-    anggota:[],
+    anggota:null,
     alumni:[],
+    pen:'',
     contoh:[
       {
         label:'',
@@ -33,6 +36,16 @@ const INIT_STATE = {
           anggota: action.payload.anggota,
           alumni: action.payload.alumni
         };
+        case POST_PENDAFTAR_UKM:
+            return { 
+              ...state, 
+              pen: action.payload
+            };
+        case CLEAR_FORM_PENDAFTARAN:
+            return { 
+              ...state, 
+              pen:''
+            };
       default:
         return { ...state };
     }

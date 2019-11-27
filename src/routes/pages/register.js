@@ -94,9 +94,8 @@ class RegisterLayout extends Component {
   handleSubmit(event){
     event.preventDefault();
 
-    if(this.state.pt_id == this.state.fakultas_pt_id 
-      && this.state.fakultas_id == this.state.prodi_fakultas_id 
-      && this.state.nama !=="" && this.state.email !== "" && this.state.nim !== "" && this.state.password !== "" 
+    if(
+      this.state.nama !=="" && this.state.email !== "" && this.state.nim !== "" && this.state.password !== "" 
       && this.password == this.password2){
 
       this.props.registerUser(this.state, this.props.history)
@@ -126,7 +125,7 @@ class RegisterLayout extends Component {
               <Colxx xxs="12" md="10" className="mx-auto my-auto">
                 <Card className="auth-card">
                   <div className="position-relative image-side ">
-                    <p className="text-white h2">UKM Center</p>
+                    {/* <p className="text-white h2">UKM Center</p>
                     <p className="white mb-0">
                       "jalan ninjaku" <br />
 
@@ -135,7 +134,7 @@ class RegisterLayout extends Component {
                         login
                       </NavLink>
                       .
-                    </p>
+                    </p> */}
                   </div>
                   <div className="form-side">
                     <div align="center">
@@ -254,6 +253,11 @@ class RegisterLayout extends Component {
                           defaultValue={this.state.password2}
                         />
                       </Label>
+                      <p className="black">
+                          <NavLink to={`/login`} className="blue">
+                            Already have an Acount? Login Here!
+                          </NavLink>
+                        </p>
                       <div className="d-flex justify-content-end align-items-center">
                         <Button
                           color="primary"

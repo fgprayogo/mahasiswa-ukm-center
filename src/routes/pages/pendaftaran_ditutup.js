@@ -280,7 +280,7 @@ class PendaftaranDitutup extends Component {
                   <BreadcrumbItems match={this.props.match} />
                 </div>
 
-                <div className="mb-2">
+                {/* <div className="mb-2">
                   <Button
                     color="empty"
                     className="pt-0 pl-0 d-inline-block d-md-none"
@@ -386,14 +386,14 @@ class PendaftaranDitutup extends Component {
                       </UncontrolledDropdown>
                     </div>
                   </Collapse>
-                </div>
+                </div> */}
                 <Separator className="mb-5" />
               </Colxx>
             </Row>
             {/* start here */}
             
             <Row>
-              {
+            {this.props.ditutup == "" ? 'Semua UKM membuka pendaftaran' :
                 this.props.ditutup.map(data => (
                   <Colxx
                       sm="6"
@@ -424,7 +424,7 @@ class PendaftaranDitutup extends Component {
                             >
                               <CardImg
                                 top
-                                src={"https://lh3.googleusercontent.com/SzfDMr1VUlpz2RT22Zrgd5fIGY0-FkL-eGknRT7D_bXOxuZ_u3MNbB14RmSipqQOEcCOxsOm6TD2fwUoepzMhGSMhWK7s3JAKQel3xv73ZruTw8qddX2Li0shWKL2NF9GsrS3d6jZkCfaICKJOhbqh8ij-sPz30e-5hD6h_SYu3F9puJNvh4ceLnU1epb1aXd8bEWvypKwKh8w58UkCG1fmCQGmBHIzmJjcCkSK_lvjcmFOPhqIfahNvnKhBQvIKgWXrcfdO_L63N2wwqUn-tW-JBSNPqTSAs3MicsfNJXXJY05nqkkr9JbQyeP094HdnSu6nKSE75slvphgSvwR6X0ha2pHMzKvbG1ga1fZk7xrNJMFVnYqXyih_HwW8rKrT4YsiSK7sI-ZxbC2dh_hruT7_b74bj-B8DOBr3kp9P_vOxJMbpJhOMsq_nk34yvfq1jjZhAZe5fQTOgAxkok5vjGCx4qbKX6WADZCfoqcSF2ydnpr3EkX4qfM7WoJ68QXnWpx3i2VyMPHEzWH_HP5ICGMIDNBCqYO5SiPaqQoUiA7knNjKYWmkvHRn7yyiQo7IJZBxa_6g3xeDfDj_bqJgH_0O_GKNsQERrc0ceKKucmKfBp2U2M9f33NhQofQDU8VZx_csSESiShm3VERP-YnVYLsjJNU0sxNJTJAnau8oah11aQzjw=s500-no"}
+                                src={`http://127.0.0.1:3333/api/ukm/file/${data.gambar}`}
                               />
                             </NavLink>
                             <Badge
@@ -437,23 +437,8 @@ class PendaftaranDitutup extends Component {
                           </div>
                           <CardBody>
                             <Row>
-                              <Colxx xxs="2">
-                                <CustomInput
-                                  className="itemCheck mb-0"
-                                  type="checkbox"
-                                  id={`check_${data.id}`}
-                                  checked={this.state.selectedItems.includes(
-                                    data.id
-                                  )}
-                                  onChange={() => {}}
-                                  label=""
-                                />
-                              </Colxx>
-                              <Colxx xxs="10" className="mb-3">
+                              <Colxx xxs="12">
                                 <CardSubtitle>{data.nama_ukm}</CardSubtitle>
-                                <CardText className="text-muted text-small mb-0 font-weight-light">
-                                  {data.profile_ukm}
-                                </CardText>
                               </Colxx>
                             </Row>
                           </CardBody>

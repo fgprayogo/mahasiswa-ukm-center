@@ -274,7 +274,7 @@ class SemuaUkm extends Component {
               <Colxx xxs="12">
                 <div className="mb-2">
                   <h1>
-                    SemuaUkm
+                    Semua UKM
                   </h1>
 {/* 
                   <div className="float-sm-right">
@@ -394,7 +394,7 @@ class SemuaUkm extends Component {
                   <BreadcrumbItems match={this.props.match} />
                 </div>
 
-                <div className="mb-2">
+                {/* <div className="mb-2">
                   <Button
                     color="empty"
                     className="pt-0 pl-0 d-inline-block d-md-none"
@@ -500,7 +500,7 @@ class SemuaUkm extends Component {
                       </UncontrolledDropdown>
                     </div>
                   </Collapse>
-                </div>
+                </div> */}
                 <Separator className="mb-5" />
               </Colxx>
             </Row>
@@ -539,7 +539,7 @@ class SemuaUkm extends Component {
                               <Link to={`${this.props.match.url}/${data.id}`}>
                               <CardImg
                                 top
-                                src={"https://image.freepik.com/free-vector/soccer-stadium-building-with-ticket-office-isometric_1441-3588.jpg"}
+                                src={`http://127.0.0.1:3333/api/ukm/file/${data.gambar}`}
                               />
                               </Link>
                             </NavLink>
@@ -553,7 +553,7 @@ class SemuaUkm extends Component {
                           </div>
                           <CardBody>
                             <Row>
-                              <Colxx xxs="2">
+                              {/* <Colxx xxs="2">
                                 <CustomInput
                                   className="itemCheck mb-0"
                                   type="checkbox"
@@ -564,12 +564,12 @@ class SemuaUkm extends Component {
                                   onChange={() => {}}
                                   label=""
                                 />
-                              </Colxx>
-                              <Colxx xxs="10" className="mb-3">
+                              </Colxx> */}
+                              <Colxx xxs="12">
                                 <CardSubtitle>{data.nama_ukm}</CardSubtitle>
-                                <CardText className="text-muted text-small mb-0 font-weight-light">
+                                {/* <CardText className="text-muted text-small mb-0 font-weight-light">
                                   {data.profile_ukm}
-                                </CardText>
+                                </CardText> */}
                               </Colxx>
                             </Row>
                           </CardBody>

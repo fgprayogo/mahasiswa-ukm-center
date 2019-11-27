@@ -24,6 +24,9 @@ import maps from './maps';
 import anggota from './anggota'
 import alumni from './alumni'
 
+import profileUkm from './edit/profileUkm'
+
+
 
 export default class Ui extends Component {
     constructor(props) {
@@ -35,8 +38,10 @@ export default class Ui extends Component {
         return (
             <Switch>
                 <Redirect exact from={`${match.url}/`} to={`${match.url}/anggota`} />
-                <Route path={`${match.url}/anggota`} component={anggota} />
-                <Route path={`${match.url}/alumni`} component={alumni} />
+                <Route path={`${match.url}/anggota`} exact component={anggota} />
+                <Route path={`${match.url}/anggota/:id`} component={profileUkm} />
+                <Route path={`${match.url}/alumni`} exact component={alumni} />
+                <Route path={`${match.url}/alumni/:id`} component={profileUkm} />
                 <Route path={`${match.url}/alerts`} component={alerts} />
                 <Route path={`${match.url}/badges`} component={badges} />
                 <Route path={`${match.url}/buttons`} component={buttons} />
