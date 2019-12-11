@@ -38,15 +38,17 @@ componentDidCatch(error){
     if (this.state.email !== "" && this.state.password !== "") {
       this.props.loginUser(this.state, this.props.history);
     }
-    console.log(this.state.error)
+    // console.log(this.state.error)
     if(this.props.msg !== null){
       this.toggle()
     }
+    
   }
   componentWillReceiveProps(nextProps){
-    if(nextProps.msg!==this.props.msg ){
+    if(nextProps.msg!==null){
       this.toggle()
     }
+    // console.log(nextProps.msg)
   }
   handleChange(event){
     this.setState({[event.target.type] : event.target.value})
@@ -55,13 +57,16 @@ componentDidCatch(error){
   componentDidMount() {
     document.body.classList.add("background");
     console.log(this.props.msg)
+    if(this.props.msg !== null){
+      this.toggle()
+    }
   }
   componentWillUnmount() {
     document.body.classList.remove("background");
   }
   componentDidUpdate(){
- 
-    console.log(this.props.msg)
+  
+    // console.log(this.props.msg)
     
   }
   msgRender(){
@@ -158,10 +163,10 @@ componentDidCatch(error){
           this.toggle :
           console.log('null')
         } */}
-        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className} delay="3000">
+        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>WARNING!</ModalHeader>
           <ModalBody>
-              Periksa kembali Email dan Password Anda!
+              {this.props.msg}
           </ModalBody>
           <ModalFooter>
             <Button color="primary" onClick={this.toggle}>Ok</Button>

@@ -35,10 +35,10 @@ export const loginUser = ({email, password}, history) => async(dispatch) => {
     localStorage.setItem("token", res.data.token)
     history.push('/')
   }catch(e){
+    console.log("error lur")
       dispatch({
         type: LOGIN_FAILED
       });
-    
   }  
 
 };
@@ -131,7 +131,7 @@ export function registerUser ({nama, email, nim, pt_id, fakultas_id, prodi_id, p
         type: REGISTER_USER,
         payload: res.data
         })
-      history.push('/login')
+      // history.push('/login')
   }
 }
 export const registerUserSuccess = (user) => ({

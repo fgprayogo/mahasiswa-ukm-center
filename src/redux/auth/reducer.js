@@ -17,11 +17,10 @@ import {
     user: localStorage.getItem("token"),
     loading: false,
     profile: [],
-    msg:'',
     pt:[],
     fakultas:[],
     prodi:[],
-    msg:null,
+    msg:null
   };
   
   export default (state = INIT_STATE, action) => {
@@ -30,13 +29,14 @@ import {
         return { 
           ...state, 
           loading: true,
-          user: action.payload.token
+          user: action.payload.token,
+          msg: action.payload.msg
         };
       case LOGIN_FAILED:
         return {
           ...state,
           field: action.payload,
-          msg: 'Periksa kembali E-mail dan Password Anda '
+          msg: 'Periksa kembali E-mail dan Password Anda'
         }
       case LOAD_PT:
         return { 

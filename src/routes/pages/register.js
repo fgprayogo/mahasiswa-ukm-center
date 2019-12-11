@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import IntlMessages from "Util/IntlMessages";
 import { Row, Card, CardTitle, Form, Label, Input, Button , Modal , ModalHeader, ModalBody, ModalFooter }  from "reactstrap";
-import { NavLink } from "react-router-dom";
+import { NavLink , Link} from "react-router-dom";
 
 import { Colxx } from "Components/CustomBootstrap";
 
@@ -27,7 +27,8 @@ class RegisterLayout extends Component {
       fakultas_pt_id :'',
       prodi_fakultas_id:'',
 
-      modal: false
+      modal: false,
+      modal2: false
 
     
     };
@@ -39,12 +40,19 @@ class RegisterLayout extends Component {
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.toggle = this.toggle.bind(this);
+    this.toggle2 = this.toggle2.bind(this);
   }
  
   toggle() {
     this.setState(prevState => ({
       modal: !prevState.modal
     }));
+  }
+  toggle2() {
+    this.setState(prevState => ({
+      modal2: !prevState.modal2
+    }));
+    this.props.registerUser(this.state, this.props.history)
   }
   onUserRegister() {
     // if (this.state.email !== "" && this.state.password !== "") {
@@ -98,7 +106,7 @@ class RegisterLayout extends Component {
       this.state.nama !=="" && this.state.email !== "" && this.state.nim !== "" && this.state.password !== "" 
       && this.password == this.password2){
 
-      this.props.registerUser(this.state, this.props.history)
+      this.toggle2()
       
       console.log('sip')
     }else {
@@ -288,6 +296,18 @@ class RegisterLayout extends Component {
           <ModalFooter>
             <Button color="primary" onClick={this.handleSubmit}>Ok</Button>
 
+          </ModalFooter>
+        </Modal>
+
+        <Modal isOpen={this.state.modal2} toggle2={this.toggle2} className={this.props.className}>
+          <ModalHeader toggle2={this.toggle2}>Registrasi Berhasil</ModalHeader>
+          <ModalBody>
+              Aktivasi akun Anda dengan membuka link yang sudah dikirimkan pada Email Anda
+          </ModalBody>
+          <ModalFooter>
+            <Link to={'/login'}>
+            <Button color="primary">Ok</Button>
+            </Link>
           </ModalFooter>
         </Modal>
       </Fragment>
